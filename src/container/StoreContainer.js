@@ -37,6 +37,8 @@ const StoreContainer = () => {
 
 
 
+
+
     const Title = styled.h1`
         text-align: center;
         font-size: 4em;
@@ -54,7 +56,7 @@ const StoreContainer = () => {
 
   
     return(
-        <>
+        <div>
             <Title>Ewan's Meagre Emporium</Title>
             <Funds>Current funds £{funds}</Funds>
             <Funds>Items in cart:{cart.length}</Funds>
@@ -68,7 +70,7 @@ const StoreContainer = () => {
             </Router>
 
             {/* <ItemList products={products}/> */}
-        </>
+        </div>
     )
 
 }
