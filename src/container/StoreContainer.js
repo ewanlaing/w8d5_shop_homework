@@ -14,6 +14,8 @@ const StoreContainer = () => {
     const [currentProduct, setCurrentProduct] = useState(null)
     const [cart, setCart] = useState([])
     const [funds, setFunds] = useState(1000)
+    const [discount, setDiscount] = useState(0);
+
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
@@ -65,7 +67,7 @@ const StoreContainer = () => {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/products" element={<ItemList products={products} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct} addToCart={addToCart}/>}/>
-                    <Route path="/cart" element={<Cart cart={cart} checkOut={checkOut}/>}/>
+                    <Route path="/cart" element={<Cart cart={cart} checkOut={checkOut} discount={discount} setDiscount={setDiscount}/>}/>
                 </Routes>
             </Router>
 

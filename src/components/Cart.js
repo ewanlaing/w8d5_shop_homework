@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import styled from'styled-components';
 
-const Cart = ({cart, checkOut}) => {
+const Cart = ({cart, checkOut, discount, setDiscount}) => {
 
 
-  const [discount, setDiscount] = useState(0);
   const [text, setText] = useState("");
 
   const currentCart = cart.map((product, index) => {
