@@ -23,8 +23,10 @@ const Cart = ({cart, checkOut, discount, setDiscount}) => {
    return (runningTotal + item.price)
   },0)
 
-  const handleDiscount = () => {
-    setDiscount(1);
+  const handleDiscount = (event) => {
+    event.preventDefault();
+    if (text === "DISCOUNT"){
+    setDiscount(1);}
   }
 
   const total = discount > 0 ? ((runningtotal * .9).toFixed(2)): (runningtotal.toFixed(2))
@@ -52,11 +54,10 @@ const Cart = ({cart, checkOut, discount, setDiscount}) => {
       <div>
       <h2>Current Total: £{total}</h2>
         <h3>Enter 'DISCOUNT' for discount</h3>
-        {/* <form onSubmit={handleDiscount}>
+        <form onSubmit={handleDiscount}>
           <input type="text" value={text} onChange={handleText} name="text"/>
           <input type="submit"/>
-        </form> */}
-        <button onClick={handleDiscount}>Discount</button>
+        </form>
         <button onClick={handleButton}>CHECK OUT</button>
       </div>
       <div>
